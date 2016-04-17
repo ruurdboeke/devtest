@@ -1,0 +1,24 @@
+{
+  "name": "watchingsetup",
+  "version": "1.0.0",
+  "description": "simple setup of webpack and react",
+  "author": "rjboeke",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-router": "*",
+    "redux": "^3.4.0"
+  },
+  "devDependencies": {
+    "browser-sync": "*",
+    "gulp": "*",
+    "gulp-nodemon": "*",
+    "gutil": "^1.6.4",
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "*",
+    "typescript": "*",
+    "webpack": "*"
+  }
+}
