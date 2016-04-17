@@ -1,0 +1,25 @@
+{
+  "name": "watchingsetup",
+  "version": "1.0.0",
+  "description": "simple setup of webpack and react",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_PATH=$NODE_PATH:./shared node --harmony .", 
+    "dev": "npm run start & webpack-dev-server --progress --color", 
+    "build": "NODE_ENV=production webpack --progress --color -p --config webpack.prod.config.js" 
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react-dom": "*",
+    "react": "*",
+    "react-router": "*",
+    "express": "*"
+  },
+  "devDependencies": {
+    "webpack": "*",
+    "typescript": "*",
+    "ts-loader": "*",
+    "webpack-dev-server": "*"
+  }
+}
