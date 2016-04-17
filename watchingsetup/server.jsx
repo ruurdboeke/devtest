@@ -1,20 +1,13 @@
-import express from 'express';
-const app = express();
-app.use((req, res) => {
-  const HTML = `
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <meta charset="utf-8">
-      <title>Isomorphic Redux Demo.</title>
-    </head>
-    <body>
-      <div id="react-view"></div>
-      <script type="application/javascript" src="/bundle.js"></script>
-    </body>
-  </html>
-  `;
-  
-  res.end(HTML);
+'use strict';
+
+// simple express server
+var express = require('express');
+var app = express();
+var router = express.Router();
+
+app.use(express.static('public'));
+app.get('/', function(req, res) {
+    res.sendfile('./index.html');
 });
-export default app;
+
+app.listen(5000);
