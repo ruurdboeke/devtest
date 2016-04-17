@@ -1,12 +1,32 @@
 'use strict';
 
 var gulp = require('gulp');
+var gutil = require('gutil');
 var browserSync = require('browser-sync');
 var nodemon = require('gulp-nodemon');
+var webpack = require('webpack');
+var config = require('./webpack.config');
 
 
-gulp.task('default', ['browser-sync'], function () {
+gulp.task('default', ['pack'], function () {
 });
+
+gulp.task('pack', function(callback) {
+  webpack(config, function(error, stats) {
+    if (error) throw new gutil.PluginError('webpack', error);
+    gutil.log('[webpack]', stats.toString());
+
+    callback();
+  });
+});
+
+gulp.task('dev', ['watchpack', 'browser-sync'], function() {
+});
+
+gulp.task('watchpack', function()
+{
+	gulp.watch('src/**/*.ts*', ['pack']);
+})
 
 gulp.task('browser-sync', ['nodemon'], function() {
 	browserSync.init(null, {

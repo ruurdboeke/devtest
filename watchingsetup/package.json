@@ -11,11 +11,12 @@
     "express": "*"
   },
   "devDependencies": {
-    "webpack": "*",
-    "typescript": "*",
-    "ts-loader": "*",
+    "browser-sync": "*",
     "gulp": "*",
     "gulp-nodemon": "*",
-    "browser-sync": "*"
-    }
+    "gutil": "^1.6.4",
+    "ts-loader": "*",
+    "typescript": "*",
+    "webpack": "*"
+  }
 }
