@@ -19,6 +19,6 @@ class AppView extends React.Component<MyProps, MyState> {
 }
 
 ReactDom.render(
-  <div></div>,
+  <AppView/>,
   document.getElementById('react-view')
 );
