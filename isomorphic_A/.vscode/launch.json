@@ -17,20 +17,20 @@
 			"env": {
 				"NODE_ENV": "development"
 			},
-			"externalConsole": false,
+			"externalConsole": true,
 			"sourceMaps": true,
-			"outDir": null
+			"outDir": "${workspaceRoot}/public/"
 		},
 		{
 			"name": "Attach",
 			"type": "node",
 			"request": "attach",
-			"port": 5000,
+			"port": 5858,
 			"address": "localhost",
 			"restart": false,
-			"sourceMaps": false,
+			"sourceMaps": true,
 			"outDir": null,
-			"localRoot": "${workspaceRoot}",
+			"localRoot": "${workspaceRoot}/public",
 			"remoteRoot": null
 		}
 	]
