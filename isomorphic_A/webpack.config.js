@@ -3,7 +3,7 @@ var webpack = require('webpack');
 
 module.exports = {
   entry:  [
-    './src/shared/components/index.tsx'
+    './src/client/mainClientHookup.jsx'
   ],
   output: {
     path:     path.join(__dirname, 'public'),
@@ -13,7 +13,7 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
       new webpack.SourceMapDevToolPlugin({
-          test:  /\.tsx?$/,
+          test:  ['/\.tsx?$/', '/\.jsx?$/'],
           exclude: 'node_modules',
           module: true,
           filename: '[file].map',
@@ -43,9 +43,14 @@ module.exports = {
   module: {
     loaders: [
       {
-        test:    /\.tsx?$/ ,
+        test:    /\.tsx?$/,
         exclude: /node_modules/,
         loaders: ['ts-loader']
+      },
+      {
+        test:    /\.jsx?$/,
+        exclude: /node_modules/,
+        loaders: ['babel-loader']
       }
     ],
     preLoaders: [

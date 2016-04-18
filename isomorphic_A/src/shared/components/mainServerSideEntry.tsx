@@ -10,7 +10,7 @@ class AppView extends React.Component<MyProps, MyState> {
   render() {
     return (
       <div id="app-view">
-        <h1>Todos</h1>
+        <h1>Todos</h1>asdf
         <hr />
         {this.props.children}
       </div>
@@ -18,7 +18,4 @@ class AppView extends React.Component<MyProps, MyState> {
   }
 }
 
-ReactDom.render(
-  <AppView/>,
-  document.getElementById('react-view')
-);
+module.exports = AppView;
