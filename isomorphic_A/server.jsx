@@ -11,7 +11,6 @@ import * as reducers from './src/shared/reducers';
 import routes from './src/shared/routes.jsx';
 
 const app = express();
-app.use(express.static('public'));
 app.use((req, res) => {
   const location = createLocation(req.url);
   const reducer  = combineReducers(reducers);
@@ -45,7 +44,7 @@ app.use((req, res) => {
       </head>
       <body>
         <div id="react-view">${componentHTML}</div>
-        <script type="application/javascript" src="/bundle.js"></script>
+        <script type="application/javascript" src="/public/bundle.js"></script>
       </body>
   </html>    
 `

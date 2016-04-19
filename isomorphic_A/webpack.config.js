@@ -21,7 +21,7 @@ module.exports = {
       })
   ],
   resolve: {
-    modulesDirectories: ['node_modules', 'shared'],
+    modulesDirectories: ['node_modules', 'src/shared'],
     extensions:         ['', '.js', '.jsx', '.ts', '.tsx']
   },
   module: {

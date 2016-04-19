@@ -3,7 +3,7 @@
 
 import * as React from 'react';
 
-export default class TodosForm extends React.Component<IHelloFormProps, any> {
+class TodosForm extends React.Component<IHelloFormProps, any> {
   handleSubmit = () => {
     let node : any = this.refs['todo-input'];
     this.props.createTodo(node.value);
@@ -19,3 +19,5 @@ export default class TodosForm extends React.Component<IHelloFormProps, any> {
     );
   }
 }
+
+export = TodosForm;
