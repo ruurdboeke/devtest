@@ -7,10 +7,11 @@ var createLocation            = require ('history/lib/createLocation');
 var { createStore, combineReducers} = require ('redux');
 var { Provider }              = require ('react-redux');
 
-import * as reducers from './src/shared/reducers';
-import routes from './src/shared/routes.jsx';
+import * as reducers from './dist/shared/reducers';
+import routes from './dist/shared/routes.js';
 
 const app = express();
+app.use(express.static('public'));
 app.use((req, res) => {
   const location = createLocation(req.url);
   const reducer  = combineReducers(reducers);
@@ -44,7 +45,7 @@ app.use((req, res) => {
       </head>
       <body>
         <div id="react-view">${componentHTML}</div>
-        <script type="application/javascript" src="/public/1bundle.js"></script>
+        <script type="application/javascript" src="/bundle.js"></script>
       </body>
   </html>    
 `

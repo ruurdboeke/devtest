@@ -3,9 +3,7 @@
 
 import * as React from 'react';
 
-interface MyState {}
-
-class TodosView extends React.Component<IHelloFormProps, any> {
+export default class TodosView extends React.Component<any, any> {
   handleDelete = (e : any) => {
     const id = Number(e.target.dataset.id);
     
@@ -44,5 +42,3 @@ class TodosView extends React.Component<IHelloFormProps, any> {
     );
   }
 }
-
-export = TodosView;

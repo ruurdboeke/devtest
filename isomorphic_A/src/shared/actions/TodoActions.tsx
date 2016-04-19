@@ -1,11 +1,11 @@
-export function createTodo(text) {
+export function createTodo(text : string) {
   return {
     type: 'CREATE_TODO',
     text,
     date: Date.now()
   }
 }
-export function editTodo(id, text) {
+export function editTodo(id : number, text : string) {
   return {
     type: 'EDIT_TODO',
     id,
@@ -13,7 +13,7 @@ export function editTodo(id, text) {
     date: Date.now()
   };
 }
-export function deleteTodo(id) {
+export function deleteTodo(id : number) {
   return {
     type: 'DELETE_TODO',
     id

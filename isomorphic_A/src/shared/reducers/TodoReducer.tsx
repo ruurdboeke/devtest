@@ -1,8 +1,8 @@
 import Immutable from 'immutable';
 
-const defaultState = new Immutable.List();
+var defaultState = Immutable.List<{}>();
 
-export default function todoReducer(state = defaultState, action) {
+export default function todoReducer(state = defaultState, action : any) {
   switch(action.type) {
     case 'CREATE_TODO':
       return state.concat(action.text);

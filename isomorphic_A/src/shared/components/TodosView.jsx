@@ -1,8 +1,7 @@
 /// <reference path="../../../typings/main.d.ts" />
 /// <reference path="../interfaces.d.ts" />
-"use strict";
-const React = require('react');
-class TodosView extends React.Component {
+import * as React from 'react';
+export default class TodosView extends React.Component {
     constructor(...args) {
         super(...args);
         this.handleDelete = (e) => {
@@ -19,10 +18,20 @@ class TodosView extends React.Component {
         };
     }
     render() {
-        return (React.createElement("div", {id: "todo-list"}, this.props.todos.map((todo, index) => {
-            return (React.createElement("div", {key: index}, React.createElement("span", null, todo), React.createElement("button", {"data-id": index, onClick: this.handleDelete}, "X"), React.createElement("button", {"data-id": index, onClick: this.handleEdit}, "Edit")));
-        })));
+        return (<div id="todo-list">
+        {this.props.todos.map((todo, index) => {
+            return (<div key={index}>
+                <span>{todo}</span>
+              
+                <button data-id={index} onClick={this.handleDelete}>
+                  X
+                </button>
+                <button data-id={index} onClick={this.handleEdit}>
+                  Edit
+                </button>
+              </div>);
+        })}
+      </div>);
     }
 }
-module.exports = TodosView;
-//# sourceMappingURL=TodosView.js.map
+//# sourceMappingURL=TodosView.jsx.map

@@ -6,9 +6,13 @@ var browserSync = require('browser-sync');
 var nodemon = require('gulp-nodemon');
 var webpack = require('webpack');
 var config = require('./webpack.config');
+var babel = require('gulp-babel');
 
-gulp.task('default', ['pack'], function () {
-});
+gulp.task('compile', () =>
+    gulp.src('src/**/*.jsx')
+        .pipe(babel())
+        .pipe(gulp.dest('dist'))
+);
 
 gulp.task('pack', function(callback) {
   webpack(config, function(error, stats) {
