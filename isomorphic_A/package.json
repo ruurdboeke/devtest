@@ -7,8 +7,10 @@
   "dependencies": {
     "express": "*",
     "history": "^2.0.2",
+    "immutable": "^3.8.0",
     "react": "*",
     "react-dom": "*",
+    "react-redux": "^4.4.5",
     "react-router": "*"
   },
   "devDependencies": {

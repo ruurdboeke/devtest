@@ -1,7 +1,6 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
 import * as React from 'react';
-import * as ReactDom from 'react-dom';
 
 interface MyProps {}
 interface MyState {}

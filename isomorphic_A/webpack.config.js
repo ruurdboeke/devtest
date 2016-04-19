@@ -30,11 +30,12 @@ module.exports = {
         "sourceMap": true,
         "module": "commonjs",
         "moduleResolution": "node",
-        "jsx": "react",
+        "jsx": "preserve",
         "allowSyntheticDefaultImports": true,
         "noLib": false,
         "declaration": false,
-        "noImplicitAny": true
+        "noImplicitAny": true,
+        "experimentalDecorators": true
       },
       "exclude": [
         "node_modules"
