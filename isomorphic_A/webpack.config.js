@@ -24,28 +24,11 @@ module.exports = {
     modulesDirectories: ['node_modules'],
     extensions:         ['', '.js', '.jsx', '.ts', '.tsx']
   },
-  ts: {
-      "compilerOptions": {
-        "target": "es5",
-        "sourceMap": true,
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "jsx": "preserve",
-        "allowSyntheticDefaultImports": true,
-        "noLib": false,
-        "declaration": false,
-        "noImplicitAny": true,
-        "experimentalDecorators": true
-      },
-      "exclude": [
-        "node_modules"
-      ]
-  },
   module: {
     loaders: [
       {
         test:    /\.tsx?$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/,/typings/],
         loaders: ['ts-loader']
       },
       {
