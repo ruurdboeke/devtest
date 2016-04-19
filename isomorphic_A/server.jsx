@@ -44,7 +44,7 @@ app.use((req, res) => {
       </head>
       <body>
         <div id="react-view">${componentHTML}</div>
-        <script type="application/javascript" src="/public/bundle.js"></script>
+        <script type="application/javascript" src="/public/1bundle.js"></script>
       </body>
   </html>    
 `
