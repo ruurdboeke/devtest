@@ -21,7 +21,7 @@ module.exports = {
       })
   ],
   resolve: {
-    modulesDirectories: ['node_modules'],
+    modulesDirectories: ['node_modules', 'shared'],
     extensions:         ['', '.js', '.jsx', '.ts', '.tsx']
   },
   module: {
@@ -29,11 +29,11 @@ module.exports = {
       {
         test:    /\.tsx?$/,
         exclude: [/node_modules/,/typings/],
-        loaders: ['ts-loader']
+        loaders: ['babel-loader','ts-loader']
       },
       {
         test:    /\.jsx?$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/,/typings/],
         loaders: ['babel-loader']
       }
     ],

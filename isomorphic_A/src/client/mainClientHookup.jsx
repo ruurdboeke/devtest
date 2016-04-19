@@ -4,7 +4,7 @@ import { Route }  from 'react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { createStore, combineReducers } from 'redux';
 import { Provider }                     from 'react-redux';
-import * as reducers                    from './shared/reducers';
+import * as reducers                    from '../shared/reducers';
 import { fromJS }                       from 'immutable';
 
 import routes from '../shared/routes';

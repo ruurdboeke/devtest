@@ -1,11 +1,8 @@
-/// <reference path="../../../typings/tsd.d.ts" />
+/// <reference path="../../../typings/main.d.ts" />
 
 import * as React from 'react';
 
-interface MyProps {}
-interface MyState {}
-
-class AppView extends React.Component<MyProps, MyState> {
+class AppView extends React.Component<any, any> {
   render() {
     return (
       <div id="app-view">
