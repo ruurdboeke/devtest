@@ -2,8 +2,8 @@
 /// <reference path="../interfaces.d.ts" />
 
 import * as React from 'react';
-var TodosForm              = require('TodosForm');
-var TodosView              = require('TodosView');
+var TodosForm              = require('./TodosForm');
+var TodosView              = require('./TodosView');
 var { bindActionCreators } = require ('redux');
 var TodoActions = require('../actions/TodoActions');
 var { connect }            = require ('react-redux');

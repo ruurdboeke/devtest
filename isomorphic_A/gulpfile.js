@@ -6,6 +6,16 @@ var browserSync = require('browser-sync');
 var nodemon = require('gulp-nodemon');
 var webpack = require('webpack');
 var config = require('./webpack.config');
+var tsc = require('gulp-tvm-tsc');
+
+gulp.task('compile', function () {
+  return gulp.src(['src/**/*.tsx'])
+    .pipe(tsc({
+	  version: '1.8.10', 
+      option: '--target ES6 --jsx preserve'
+    })).on('error', gutil.log)
+    .pipe(gulp.dest('dest/'));
+});
 
 
 gulp.task('default', ['pack'], function () {

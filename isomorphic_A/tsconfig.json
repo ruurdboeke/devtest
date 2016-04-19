@@ -4,7 +4,7 @@
         "sourceMap": true,
         "module": "commonjs",
         "moduleResolution": "node",
-        "jsx": "preserve",
+        "jsx": "react",
         "allowSyntheticDefaultImports": true,
         "noLib": false,
         "declaration": false,

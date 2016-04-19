@@ -13,7 +13,7 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
       new webpack.SourceMapDevToolPlugin({
-          test:  ['/\.tsx?$/', '/\.jsx?$/'],
+          test:  ['/\.jsx?$/'],
           exclude: 'node_modules',
           module: true,
           filename: '[file].map',
@@ -22,15 +22,10 @@ module.exports = {
   ],
   resolve: {
     modulesDirectories: ['node_modules', 'src/shared'],
-    extensions:         ['', '.js', '.jsx', '.ts', '.tsx']
+    extensions:         ['', '.js', '.jsx']
   },
   module: {
     loaders: [
-      {
-        test:    /\.tsx?$/,
-        exclude: [/node_modules/,/typings/],
-        loaders: ['babel-loader','ts-loader']
-      },
       {
         test:    /\.jsx?$/,
         exclude: [/node_modules/,/typings/],

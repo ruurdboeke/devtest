@@ -1,8 +1,8 @@
 import React     from 'react';
 import { Route } from 'react-router';
 
-import App from './components/mainServerSideEntry.tsx';
-import Home from './components/Home.tsx';
+import App from './components/mainServerSideEntry';
+import Home from './components/Home';
 
 export default (
   <Route name="app" component={App} path="/">

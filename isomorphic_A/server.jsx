@@ -4,7 +4,7 @@ var React                     = require ('react');
 var { renderToString }        = require ('react-dom/server');
 var { RouterContext, match } = require ('react-router');
 var createLocation            = require ('history/lib/createLocation');
-var { createStore, combineReducers} = require ('react');
+var { createStore, combineReducers} = require ('redux');
 var { Provider }              = require ('react-redux');
 
 import * as reducers from './src/shared/reducers';
