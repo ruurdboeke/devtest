@@ -2,7 +2,8 @@
 
 import React from 'react';
 var Link = require('react-router').Link;
- 
+import ComponentB from './ComponentB';
+
 /**
  *
  * @extends React.Component
@@ -18,7 +19,8 @@ export default class ComponentA extends React.Component<any, any> {
         return (
             <div className="page--home">
                 <h1>A</h1>
-                <Link to="/components/ComponentB">PageB</Link>
+                <ComponentB />
+                <Link to="/ComponentB">PageB</Link>
             </div>
         );
     }

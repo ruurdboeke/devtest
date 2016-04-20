@@ -2,7 +2,7 @@
 
 import React from 'react';
 var Link = require('react-router').Link;
- 
+
 /**
  *
  * @extends React.Component
