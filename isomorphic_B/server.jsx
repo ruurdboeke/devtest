@@ -25,9 +25,7 @@ const store    = createStore(reducer);
     if (!renderProps) return res.status(404).end('Not found.');
     
     const InitialComponent = (
-      <Provider store={store}>
         <RouterContext {...renderProps} />
-      </Provider>
     );
     
     const initialState = store.getState();

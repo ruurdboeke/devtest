@@ -2,7 +2,7 @@
 
 import React       from 'react';
 import { render }  from 'react-dom';
-var { Route, hashHistory  } = require('react-router');
+var { Route, browserHistory, Router  } = require('react-router');
 import { createStore, combineReducers } from 'redux';
 var { Provider } = require ('react-redux');
 var reducers     = require ('../shared/reducers');
@@ -25,7 +25,7 @@ const store   = createStore(reducer, initialState);
 
 render(
   <Provider store={store}>
-      <Route.Router children={routes} history={hashHistory } />
+      <Router children={routes} history={browserHistory} />
   </Provider>,
   document.getElementById('react-view')
 );

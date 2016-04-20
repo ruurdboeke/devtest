@@ -1,7 +1,6 @@
 /// <reference path="../../../typings/main.d.ts" />
 import React from 'react';
 var Link = require('react-router').Link;
-import ComponentB from './ComponentB';
 /**
  *
  * @extends React.Component
@@ -16,7 +15,6 @@ export default class ComponentA extends React.Component {
     render() {
         return (<div className="page--home">
                 <h1>A</h1>
-                <ComponentB />
                 <Link to="/ComponentB">PageB</Link>
             </div>);
     }
