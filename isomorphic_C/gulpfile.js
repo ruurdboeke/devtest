@@ -41,7 +41,8 @@ gulp.task('pack', ['compileServer', 'compiletsx'], function() {
    return stream;		// return will let gulp understand it is sync
 });
 
-gulp.task('browser-sync', ['nodemon'], function() {
+// for devs: have a browser window that reloads when making a change
+gulp.task('start', ['nodemon'], function() {
 	return browserSync.init(null, {
 		proxy: "http://localhost:5000",
         files: ["public/**/*.*"],
@@ -50,6 +51,7 @@ gulp.task('browser-sync', ['nodemon'], function() {
 	});
 });
 
+// for devs: have an instance of node that restarts when making a change
 gulp.task('nodemon', function (cb) {
 	
 	var started = false;

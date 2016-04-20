@@ -17,7 +17,7 @@ export default class ComponentA extends React.Component<any, any> {
     render() {
         return (
             <div className="page--home">
-                <h1>component A</h1>
+                <h1>A</h1>
                 <Link to="/ComponentB">PageB</Link>
             </div>
         );

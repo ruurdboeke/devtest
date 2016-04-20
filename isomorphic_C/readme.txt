@@ -14,4 +14,4 @@ gulp pack
 
 // start server and watch changes
 // note that you have to manually pack again to resync, I did that because just save is somewhat implicit
-gulp browser-sync
+gulp start

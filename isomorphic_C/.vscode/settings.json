@@ -1,0 +1,10 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+      "files.exclude": {
+		"server.js": true,
+		"public": true,
+		"node_modules": true,
+		"typings": true,
+		"dist": true
+	}
+}
