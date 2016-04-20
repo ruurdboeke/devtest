@@ -1,0 +1,31 @@
+/// <reference path="../../typings/main.d.ts" />
+
+import React       from 'react';
+import { render }  from 'react-dom';
+var { Route, hashHistory  } = require('react-router');
+import { createStore, combineReducers } from 'redux';
+var { Provider } = require ('react-redux');
+var reducers     = require ('../shared/reducers');
+import { fromJS }                       from 'immutable';
+
+import routes from '../shared/routes';
+
+declare var window: any;
+
+let initialState = window.__INITIAL_STATE__;
+// Transform into Immutable.js collections,
+// but leave top level keys untouched for Redux
+Object
+  .keys(initialState)
+  .forEach(key => {
+    initialState[key] = fromJS(initialState[key]);
+   });
+const reducer = combineReducers(reducers);
+const store   = createStore(reducer, initialState);
+
+render(
+  <Provider store={store}>
+      <Route.Router children={routes} history={hashHistory } />
+  </Provider>,
+  document.getElementById('react-view')
+);
