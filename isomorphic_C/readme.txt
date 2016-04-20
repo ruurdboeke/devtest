@@ -15,3 +15,8 @@ gulp pack
 // start server and watch changes
 // note that you have to manually pack again to resync, I did that because just save is somewhat implicit
 gulp start
+
+// VS CODE users:
+- recommend to change your keybinding to use the following as well   (ctrl-p, type 'key' to open global roaming user setting file)
+    { "key": "f6",                    "command": "workbench.action.tasks.runTask",
+                                     "when": "!inDebugMode" }
