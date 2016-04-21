@@ -5,7 +5,7 @@ import { render }  from 'react-dom';
 var { Route, browserHistory, Router  } = require('react-router');
 import { createStore, combineReducers } from 'redux';
 var { Provider } = require ('react-redux');
-var reducers     = require ('./../shared/reducers/SimpleReducer');
+var reducers     = require ('./../shared/reducers/reducers');
 import { fromJS }  from 'immutable';
 
 import routes from './../shared/routes';
