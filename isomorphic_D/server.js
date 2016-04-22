@@ -1,16 +1,14 @@
 'use strict';
 
-var _SimpleReducer = require('./dist/shared/reducers/SimpleReducer.js');
+var _reducers = require('./dist/shared/reducers/reducers.js');
 
-var reducers = _interopRequireWildcard(_SimpleReducer);
+var _reducers2 = _interopRequireDefault(_reducers);
 
 var _routes = require('./dist/shared/routes.js');
 
 var _routes2 = _interopRequireDefault(_routes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 var express = require('express');
 var React = require('react');
@@ -27,7 +25,6 @@ var match = _require2.match;
 var _require3 = require('redux');
 
 var createStore = _require3.createStore;
-var combineReducers = _require3.combineReducers;
 
 var _require4 = require('react-redux');
 
@@ -37,8 +34,7 @@ var Provider = _require4.Provider;
 var PORT = process.env.PORT || 5000;
 
 var app = express();
-var reducer = combineReducers(reducers);
-var store = createStore(reducer);
+var store = createStore(_reducers2.default);
 
 app.use(express.static('public'));
 app.use(function (req, res) {

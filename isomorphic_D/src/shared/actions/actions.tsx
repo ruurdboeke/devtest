@@ -1,39 +1,39 @@
-/*
- * action types
- */
-export const enum Actions{
-'ADD_TODO',
-'COMPLETE_TODO',
-'SET_VISIBILITY_FILTER'
-}
-
-/*
- * other constants
- */
-
 export const enum VisibilityFilters {
   'SHOW_ALL',
   'SHOW_COMPLETED',
   'SHOW_ACTIVE'
 }
 
-export class Action{
-    type : Actions;
-    id : number;
+interface ActionType<TPayload> extends String {}
+
+export type Action<TPayload> = {
+    type: ActionType<TPayload>,
+    payload: TPayload
 }
 
-/*
- * action creators
- */
-
-export function addTodo(text : string) {
-  return { type: Actions.ADD_TODO, text }
+interface ActionCreator<P> {
+    (payload: P): Action<P>;
 }
 
-export function completeTodo(index : number) {
-  return { type: Actions.COMPLETE_TODO, index }
+function actionCreator<TPayload>(type: ActionType<TPayload>): ActionCreator<TPayload> {
+    return (payload) => ({
+        type,
+        payload
+    });
 }
 
-export function setVisibilityFilter(filter : VisibilityFilters) {
-  return { type: Actions.SET_VISIBILITY_FILTER, filter }
+export function isType<TPayload>(
+    action: Action<any>, 
+    type: ActionType<TPayload>
+): action is Action<TPayload> {
+    return action.type === type;
 }
+
+export const AddAction: ActionType<{ text: string }> = 'AddAction';
+export const createAddAction = actionCreator(AddAction);
+
+export const CompleteAction: ActionType<{ completed: boolean, id : number }> = 'CompleteAction';
+export const createCompleteAction = actionCreator(CompleteAction);
+
+export const SetVisibilityAction: ActionType<{ visiblity: VisibilityFilters }> = 'SetVisibilityAction';
+export const createSetVisibilityAction = actionCreator(SetVisibilityAction);
