@@ -7,7 +7,7 @@ interface ILinkProps {
     active: boolean
 }
 
-export default class Link extends React.Component<ILinkProps, any> {
+export default class LinkComponent extends React.Component<ILinkProps, any> {
     render() {
         if (this.props.active) {
             return <span>{this.props.children}</span>

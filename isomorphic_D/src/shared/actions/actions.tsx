@@ -35,5 +35,5 @@ export const createAddAction = actionCreator(AddAction);
 export const CompleteAction: ActionType<{ completed: boolean, id : number }> = 'CompleteAction';
 export const createCompleteAction = actionCreator(CompleteAction);
 
-export const SetVisibilityAction: ActionType<{ visiblity: VisibilityFilters }> = 'SetVisibilityAction';
+export const SetVisibilityAction: ActionType<{ visibility: VisibilityFilters }> = 'SetVisibilityAction';
 export const createSetVisibilityAction = actionCreator(SetVisibilityAction);

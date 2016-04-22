@@ -36,6 +36,10 @@ var PORT = process.env.PORT || 5000;
 var app = express();
 var store = createStore(_reducers2.default);
 
+var unsubscribe = store.subscribe(function () {
+  return console.log(store.getState());
+});
+
 app.use(express.static('public'));
 app.use(function (req, res) {
 
@@ -46,7 +50,11 @@ app.use(function (req, res) {
     }
     if (!renderProps) return res.status(404).end('Not found.');
 
-    var InitialComponent = React.createElement(RouterContext, renderProps);
+    var InitialComponent = React.createElement(
+      Provider,
+      { store: store },
+      React.createElement(RouterContext, renderProps)
+    );
 
     var initialState = store.getState();
 

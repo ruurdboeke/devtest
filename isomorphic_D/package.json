@@ -28,6 +28,7 @@
     "gulp-shell": "^0.5.2",
     "gulp-typescript": "^2.13.0",
     "gutil": "^1.6.4",
+    "rimraf": "^2.5.2",
     "source-map-loader": "^0.1.5",
     "ts-loader": "*",
     "typescript": "^1.8.10",

@@ -7,14 +7,15 @@ module.exports = {
   entry:  [
     './dist/client/mainClientHookup.js'
   ],
-  noInfo: false,
+  noInfo: true,
+  'display-modules': false,
   output: {
     path:     path.join(__dirname, 'public'),
     filename: 'bundle.js',
     sourcemaps: '[file].js.map'
   },
   resolve: {
-    modulesDirectories: ['node_modules', 'src/shared'],
+    modulesDirectories: ['node_modules'],
     extensions:         ['', '.js']
   }
 };

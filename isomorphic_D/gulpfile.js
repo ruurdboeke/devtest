@@ -5,15 +5,19 @@ var gutil = require('gutil');
 var browserSync = require('browser-sync');
 var nodemon = require('gulp-nodemon');
 var webpack = require('webpack');
-var config = require('./webpack.config');
 var babel = require('gulp-babel');
-var shell = require('gulp-shell'); // todo: still need this for something? otherwise remove
 var ts = require('gulp-typescript');
+var rimraf = require('rimraf')
 
 // configures to use tsconfig with the typescript that we installed
 var tsProject = ts.createProject('tsconfig.json', {
 	typescript: require('typescript')
 });
+
+gulp.task('clean', function (cb) {
+	rimraf('./dist', cb);
+});
+
 
 // transpile our server.jsx
 gulp.task('compileServer', function() {
@@ -34,7 +38,8 @@ gulp.task('compiletsx', function() {
 
 // bundle it up
 gulp.task('pack', ['compileServer', 'compiletsx'], function() {
-   var stream = webpack(config, function(error, stats) {
+   var stream = webpack(require('./webpack.config.js'), 
+		function(error, stats) {
 			if (error) throw new gutil.PluginError('webpack', error);
 			gutil.log('[webpack]', stats.toString());
 		});

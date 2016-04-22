@@ -21,7 +21,7 @@ store.dispatch(createAddAction({ text: 'Learn about reducers'}))
 store.dispatch(createAddAction({ text: 'Learn about store'}))
 store.dispatch(createCompleteAction({ completed: true, id: 0}))
 store.dispatch(createCompleteAction({ completed: true, id: 1}))
-store.dispatch(createSetVisibilityAction({visiblity: VisibilityFilters.SHOW_COMPLETED}))
+store.dispatch(createSetVisibilityAction({visibility: VisibilityFilters.SHOW_COMPLETED}))
 
 // Stop listening to state updates
 unsubscribe()

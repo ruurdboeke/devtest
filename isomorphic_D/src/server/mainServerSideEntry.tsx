@@ -1,17 +1,18 @@
 /// <reference path="../../typings/main.d.ts" />
 
 import * as React from 'react';
-
+import VisibleTodoListContainer from './../shared/components/VisibleTodoListContainer'
+import AddTodo from './../shared/components/AddTodoComponent'
 
 export default class AppView extends React.Component<any, any> {
-    static propTypes = {
+      static propTypes = {
         children: React.PropTypes.node
     };
-
   render() {
     return (
-        <div className="page">appview is here <input></input>
-            <div className="page--grow">{this.props.children}</div>
+        <div >appview is here, not currently using routing <input></input>
+            <VisibleTodoListContainer />
+            <AddTodo />
         </div>
     );
   }
