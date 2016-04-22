@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 
+
 export default class AppView extends React.Component<any, any> {
     static propTypes = {
         children: React.PropTypes.node
