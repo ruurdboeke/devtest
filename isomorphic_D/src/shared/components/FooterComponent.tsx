@@ -1,31 +1,21 @@
 /// <reference path="../../../typings/main.d.ts" />
 
 import React from 'react'
-import FilterLink from '../components/FilterLinkContainer'
+import FilterLinkContainer from '../containers/FilterLinkContainer'
+import { VisibilityFilters } from '../actions/actions'
 
-interface IFooterProps {
-    onClick: any,
-    children: any,
-    active: boolean
-}
-
-export default class FooterComponent extends React.Component<IFooterProps, any> {
+export default class FooterComponent extends React.Component<any, any> {
     render() {
         return (
             <p>
                 Show:
-                {" "}
-                <FilterLink filter="SHOW_ALL">
+                <FilterLinkContainer filter={VisibilityFilters.SHOW_ALL}>
                     All
-                </FilterLink>
-                {", "}
-                <FilterLink filter="SHOW_ACTIVE">
+                </FilterLinkContainer>, <FilterLinkContainer filter={VisibilityFilters.SHOW_ACTIVE}>
                     Active
-                </FilterLink>
-                {", "}
-                <FilterLink filter="SHOW_COMPLETED">
+                </FilterLinkContainer>, <FilterLinkContainer filter={VisibilityFilters.SHOW_COMPLETED}>
                     Completed
-                </FilterLink>
+                </FilterLinkContainer>
             </p>
         );
     }

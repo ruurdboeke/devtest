@@ -1,3 +1,5 @@
+/// <reference path="../../../typings/main.d.ts" />
+
 export const enum VisibilityFilters {
   'SHOW_ALL',
   'SHOW_COMPLETED',

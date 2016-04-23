@@ -2,7 +2,7 @@
 
 var { connect } = require ('react-redux');
 import { createCompleteAction, VisibilityFilters } from './../actions/actions'
-import TodoList from './TodoListComponent'
+import TodoListComponent from './../components/TodoListComponent'
 import Todo from './../../Todo'
 import State from './../../State'
 
@@ -15,6 +15,7 @@ const getVisibleTodos = (todos : Todo[], filter : VisibilityFilters) => {
     case VisibilityFilters.SHOW_ACTIVE:
       return todos.filter(t => !t.completed)
   }
+  
 }
 
 // this is not great, we are constructing a part of the ultimate type that will be sent to this component
@@ -25,10 +26,12 @@ const mapStateToProps = (state : State) => {
   }
 }
 
+// this is not great, we are constructing a part of the ultimate type that will be sent to this component
+// that component has its type defined as ITodoListComponent
 const mapDispatchToProps = (dispatch : any) => {
   return {
-    onTodoClick: (todoID : number) => {
-      dispatch(createCompleteAction({ completed : true, id : todoID }))
+    onTodoClick: (todoID : number, todoCompleted : boolean) => {
+      dispatch(createCompleteAction({ completed : !todoCompleted, id : todoID }))
     }
   }
 }
@@ -36,6 +39,6 @@ const mapDispatchToProps = (dispatch : any) => {
 const VisibleTodoListContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(TodoList)
+)(TodoListComponent)
 
 export default VisibleTodoListContainer

@@ -29,6 +29,6 @@ class AddTodo extends React.Component<{dispatch: any}, any> {
   }
 }
 
-const AddTodoComponent = connect()(AddTodo)
+const AddTodoContainer = connect()(AddTodo)
 
-export default AddTodoComponent
+export default AddTodoContainer

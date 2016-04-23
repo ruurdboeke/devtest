@@ -1,3 +1,5 @@
+/// <reference path="../../../typings/main.d.ts" />
+
 import { combineReducers } from 'redux'
 import { VisibilityFilters, AddAction, SetVisibilityAction, CompleteAction, isType, Action } from './../actions/actions'
 import Todo from './../../Todo'
@@ -27,7 +29,7 @@ export default function todoAppReducer(state : State = new State(), action : Act
       return Object.assign({}, state, {
         todos : state.todos.map( (todo: Todo) => {
           if (todo.id === action.payload.id) {
-            return new Todo(todo.text, false, todo.id);
+            return new Todo(todo.text, action.payload.completed, todo.id);
           }
           return todo;
         })

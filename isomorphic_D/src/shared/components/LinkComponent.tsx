@@ -1,9 +1,9 @@
 /// <reference path="../../../typings/main.d.ts" />
-import React, { PropTypes } from 'react'
+import React from 'react'
 
 interface ILinkProps {
-    onClick: any,
-    children: any,
+    onClick: any,           
+    children: any,          // ? is this implicit?
     active: boolean
 }
 
