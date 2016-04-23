@@ -17,16 +17,17 @@ export default function todoAppReducer(state : State = new State(), action : Act
    {
       return Object.assign({}, state, {
         todos: [
-          ...state.todos, new Todo(action.payload.text, false, -1)
+          ...state.todos, new Todo(action.payload.text, false, 
+            state.todos.length == 0 ? 0 : state.todos[state.todos.length -1].id +1)
         ]
       })
    }
    else if (isType(action, CompleteAction))
    {
       return Object.assign({}, state, {
-        todos : state.todos.map( (todo: Todo, index: number) => {
-          if (index === action.payload.id) {
-            return Object.assign(new Todo('', false, -1), todo, { completed: true })
+        todos : state.todos.map( (todo: Todo) => {
+          if (todo.id === action.payload.id) {
+            return new Todo(todo.text, false, todo.id);
           }
           return todo;
         })

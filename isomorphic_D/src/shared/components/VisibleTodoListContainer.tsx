@@ -17,6 +17,8 @@ const getVisibleTodos = (todos : Todo[], filter : VisibilityFilters) => {
   }
 }
 
+// this is not great, we are constructing a part of the ultimate type that will be sent to this component
+// that component has its type defined as ITodoListComponent
 const mapStateToProps = (state : State) => {
   return {
     todos: getVisibleTodos(state.todos, state.visibilityFilter)
